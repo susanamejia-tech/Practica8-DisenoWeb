@@ -1,0 +1,26 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "iPvZXeL2f0K9D9Jx3I1hP"
+uri = "file://artifacts/pasteleria-esperanza/public/hero.png"
+type = "image"
+title = "bakery display case hero"
+
+[[generated]]
+id = "RsWoK8m7gUHhhmBmoZcwE"
+uri = "file://artifacts/pasteleria-esperanza/public/gallery1.png"
+type = "image"
+title = "pastries closeup"
+
+[[generated]]
+id = "6mtl-oezF3X668aTiwx3H"
+uri = "file://artifacts/pasteleria-esperanza/public/gallery2.png"
+type = "image"
+title = "bread display"
+
+[[generated]]
+id = "okMSh26bqnweJdDRon1Yl"
+uri = "file://artifacts/pasteleria-esperanza/public/gallery3.png"
+type = "image"
+title = "cake slices"

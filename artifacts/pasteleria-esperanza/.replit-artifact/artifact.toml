@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "Pastelerías Esperanza"
+version = "1.0.0"
+id = "artifacts/pasteleria-esperanza"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21598
+
+[services.development]
+run = "pnpm --filter @workspace/pasteleria-esperanza run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/pasteleria-esperanza", "run", "build" ]
+publicDir = "artifacts/pasteleria-esperanza/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21598"
+BASE_PATH = "/"
