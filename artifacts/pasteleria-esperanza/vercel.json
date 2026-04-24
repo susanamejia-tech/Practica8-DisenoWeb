@@ -1,6 +1,7 @@
 {
-  "framework": "vite",
-  "outputDirectory": "dist/public",
+  "buildCommand": "pnpm --filter @workspace/pasteleria-esperanza run build",
+  "outputDirectory": "artifacts/pasteleria-esperanza/dist/public",
+  "installCommand": "pnpm install",
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]
