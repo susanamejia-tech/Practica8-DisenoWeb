@@ -368,8 +368,83 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* 8. FORM */}
+      <section id="form" className="py-24" style={{ background: '#FAF6F0' }}>
+        <div className="container mx-auto px-4">
+          <FadeIn>
+            <div className="text-center mb-12">
+              <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#C9A96E' }}>Pedidos en línea</span>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold mb-3" style={{ color: '#3D2214' }}>¡Pide tu orden en línea!</h3>
+              <p style={{ color: '#7a5c4a' }}>Llena el formulario y nos ponemos en contacto contigo a la brevedad.</p>
+            </div>
 
-      {/* 8. MAP */}
+            <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-lg border p-8 md:p-12" style={{ borderColor: '#f0e6d8' }}>
+              <form className="flex flex-col gap-6" onSubmit={e => e.preventDefault()}>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold" style={{ color: '#5C3D2E' }}>Nombre completo</label>
+                  <input
+                    type="text"
+                    name="nombre"
+                    placeholder="Ej. María García"
+                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2"
+                    style={{ borderColor: '#e8d8c8', background: '#FAF6F0', color: '#3D2214', '--tw-ring-color': '#C9A96E' } as React.CSSProperties}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold" style={{ color: '#5C3D2E' }}>Teléfono</label>
+                  <input
+                    type="tel"
+                    name="telefono"
+                    placeholder="Ej. 33 1234 5678"
+                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2"
+                    style={{ borderColor: '#e8d8c8', background: '#FAF6F0', color: '#3D2214' } as React.CSSProperties}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold" style={{ color: '#5C3D2E' }}>Dirección de entrega</label>
+                  <input
+                    type="text"
+                    name="direccion"
+                    placeholder="Calle, número, colonia"
+                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2"
+                    style={{ borderColor: '#e8d8c8', background: '#FAF6F0', color: '#3D2214' } as React.CSSProperties}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-1.5">
+                  <label className="text-sm font-semibold" style={{ color: '#5C3D2E' }}>Tu orden</label>
+                  <textarea
+                    name="orden"
+                    rows={4}
+                    placeholder="Describe los productos que deseas, cantidad y cualquier indicación especial..."
+                    className="w-full rounded-xl border px-4 py-3 text-sm outline-none transition focus:ring-2 resize-none"
+                    style={{ borderColor: '#e8d8c8', background: '#FAF6F0', color: '#3D2214' } as React.CSSProperties}
+                  />
+                </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full rounded-xl py-4 text-base font-serif italic font-semibold shadow-md transition hover:opacity-90"
+                  style={{ background: '#5C3D2E', color: '#FAF6F0' }}
+                >
+                  Enviar pedido
+                </Button>
+
+                <p className="text-center text-xs" style={{ color: '#a08070' }}>
+                  También puedes llamarnos al <span className="font-semibold">55 6285 0400 ext. 9311</span>
+                </p>
+
+              </form>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+      
+      {/* 9. MAP */}
       <section id="mapa" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <FadeIn>
