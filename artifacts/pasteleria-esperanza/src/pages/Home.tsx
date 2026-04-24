@@ -408,48 +408,33 @@ export default function Home() {
       {/* 9. FOOTER */}
       <footer className="bg-foreground text-background pt-16 pb-8">
         <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
             <div>
-              <h4 className="font-serif text-2xl font-bold mb-4 text-white">Pastelerías Esperanza</h4>
+              <img src="https://res.cloudinary.com/dml7j4luq/image/upload/v1776997314/cucei-logo_1_eps2sv.png" alt="Logo CUCEI" className="h-30 mb-6" />
               <p className="text-white/70 text-sm mb-4">
-                Hecho con amor en Guadalajara. Una tradición familiar horneada cada mañana para tu mesa.
+                Centro Universitario de Ciencias Exactas e Ingenierías
               </p>
             </div>
             <div>
-              <h5 className="font-bold mb-4 text-white uppercase tracking-wider text-sm">Contacto</h5>
+              <h5 className="font-bold mb-4 text-white uppercase tracking-wider text-sm">Práctica 8</h5>
               <ul className="space-y-3 text-white/70 text-sm">
                 <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 shrink-0 text-secondary" />
-                  <span>Av Río Nilo 1963, Lomas del Paradero, 44840 Guadalajara, Jalisco</span>
+                  <span>Nombre: Susana Rubí Manzo Mejía</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Phone className="w-5 h-5 shrink-0 text-secondary" />
-                  <span>55 6285 0400 ext. 9311</span>
+                  <span>Materia: Desarrollo de aplicaciones web en la nube y móviles</span>
                 </li>
                 <li className="flex items-center gap-3">
-                  <Clock className="w-5 h-5 shrink-0 text-secondary" />
-                  <span>Lunes a Domingo: 7:00 a.m. - 9:00 p.m.</span>
+                  <span>Profesor: Zeus Emanuel Gutierrez Cobian</span>
+                </li>
+                <li className="flex items-center gap-3">
+                  <span>Ciclo: 2026A</span>
                 </li>
               </ul>
             </div>
-            <div>
-              <h5 className="font-bold mb-4 text-white uppercase tracking-wider text-sm">Síguenos</h5>
-              <div className="flex gap-4">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
-                  <Instagram className="w-5 h-5" />
-                </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary transition-colors text-white">
-                  <Smartphone className="w-5 h-5" />
-                </a>
-              </div>
-            </div>
           </div>
-          
           <div className="pt-8 border-t border-white/20 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-white/50">
-            <p>© 2026 Pastelerías Esperanza — Todos los derechos reservados</p>
+            <p>© 2026 Susana y Replit — Todos los derechos reservados</p>
             <p>Diseñado con pasión.</p>
           </div>
         </div>
