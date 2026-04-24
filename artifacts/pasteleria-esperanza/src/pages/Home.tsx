@@ -85,9 +85,6 @@ export default function Home() {
             <Button variant="outline" className="border-primary/20 hover:bg-primary/5 font-serif italic text-primary" onClick={() => document.getElementById('mapa')?.scrollIntoView({ behavior: 'smooth' })}>
               <MapPin className="w-4 h-4 mr-2" /> Cómo llegar
             </Button>
-            <Button variant="outline" className="border-primary/20 hover:bg-primary/5 font-serif italic text-primary">
-              <Phone className="w-4 h-4 mr-2" /> Llamar
-            </Button>
             <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-serif italic px-6">
               Pedir en línea
             </Button>
