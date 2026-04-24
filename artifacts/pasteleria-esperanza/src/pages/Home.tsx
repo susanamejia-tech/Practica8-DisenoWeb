@@ -156,7 +156,7 @@ export default function Home() {
             </p>
           </FadeIn>
           <FadeIn delay={0.3}>
-            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 h-auto font-serif italic rounded-full shadow-xl">
+            <Button size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 h-auto font-serif italic rounded-full shadow-xl" onClick={() => document.getElementById('menu')?.scrollIntoView({ behavior: 'smooth' })}>
               Ver nuestro menú
             </Button>
           </FadeIn>
@@ -244,7 +244,7 @@ export default function Home() {
       </section>
 
       {/* 5. MENU SECTION */}
-      <section className="py-24 bg-card">
+      <section id="menu" className="py-24 bg-card">
         <div className="container mx-auto px-4 max-w-5xl">
           <FadeIn>
             <div className="text-center mb-16">
