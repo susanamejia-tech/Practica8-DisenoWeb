@@ -451,9 +451,6 @@ export default function Home() {
                   Enviar pedido
                 </Button>
 
-                <p className="text-center text-xs" style={{ color: '#a08070' }}>
-                  También puedes llamarnos al <span className="font-semibold">55 6285 0400 ext. 9311</span>
-                </p>
 
               </form>
               )}
