@@ -47,6 +47,7 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [orderNumber, setOrderNumber] = useState<number | null>(null);
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 500], [0, 150]);
 
@@ -85,7 +86,7 @@ export default function Home() {
             <Button variant="outline" className="border-primary/20 hover:bg-primary/5 font-serif italic text-primary" onClick={() => document.getElementById('mapa')?.scrollIntoView({ behavior: 'smooth' })}>
               <MapPin className="w-4 h-4 mr-2" /> Cómo llegar
             </Button>
-            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-serif italic px-6">
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90 font-serif italic px-6" onClick={() => document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' })}>
               Pedir en línea
             </Button>
           </div>
@@ -114,7 +115,7 @@ export default function Home() {
             <Button variant="outline" className="w-full justify-start">
               <Phone className="w-4 h-4 mr-2" /> Llamar
             </Button>
-            <Button className="w-full justify-start">
+            <Button className="w-full justify-start" onClick={() => { document.getElementById('form')?.scrollIntoView({ behavior: 'smooth' }); setIsMobileMenuOpen(false); }}>
               Pedir en línea
             </Button>
           </div>
@@ -369,17 +370,33 @@ export default function Home() {
         </div>
       </section>
       {/* 8. FORM */}
-      <section id="form" className="py-24" style={{ background: '#FAF6F0' }}>
+      <section id="form" className="py-24" style={{ background: '#D48777' }}>
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-12">
-              <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: '#C9A96E' }}>Pedidos en línea</span>
-              <h3 className="font-serif text-3xl md:text-4xl font-bold mb-3" style={{ color: '#3D2214' }}>¡Pide tu orden en línea!</h3>
-              <p style={{ color: '#7a5c4a' }}>Llena el formulario y nos ponemos en contacto contigo a la brevedad.</p>
+              <span className="inline-block text-xs font-bold uppercase tracking-widest mb-3" style={{ color: 'white' }}>Pedidos en línea</span>
+              <h3 className="font-serif text-3xl md:text-4xl font-bold mb-3" style={{ color: 'black' }}>¡Pide tu orden en línea!</h3>
+              <p style={{ color: 'black' }}>Llena el formulario y nos ponemos en contacto contigo a la brevedad.</p>
             </div>
 
             <div className="max-w-2xl mx-auto bg-white rounded-3xl shadow-lg border p-8 md:p-12" style={{ borderColor: '#f0e6d8' }}>
-              <form className="flex flex-col gap-6" onSubmit={e => e.preventDefault()}>
+              {orderNumber !== null ? (
+                <div className="flex flex-col items-center justify-center py-10 gap-4 text-center">
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center mb-2" style={{ background: '#e8f5e9' }}>
+                    <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="#4caf50" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" /></svg>
+                  </div>
+                  <h4 className="font-serif text-2xl font-bold" style={{ color: '#3D2214' }}>¡Pedido recibido!</h4>
+                  <p className="text-base" style={{ color: '#5C3D2E' }}>
+                    Recibimos tu pedido, tu número de orden es
+                  </p>
+                  <span className="text-4xl font-bold tracking-widest font-serif" style={{ color: '#C9A96E' }}>#{orderNumber}</span>
+                  <p className="text-sm mt-2" style={{ color: '#a08070' }}>Nos pondremos en contacto contigo pronto para confirmar los detalles.</p>
+                  <Button variant="outline" className="mt-4 rounded-xl font-serif italic" style={{ borderColor: '#e8d8c8', color: '#5C3D2E' }} onClick={() => setOrderNumber(null)}>
+                    Hacer otro pedido
+                  </Button>
+                </div>
+              ) : (
+              <form className="flex flex-col gap-6" onSubmit={e => { e.preventDefault(); setOrderNumber(Math.floor(1000 + Math.random() * 9000)); }}>
 
                 <div className="flex flex-col gap-1.5">
                   <label className="text-sm font-semibold" style={{ color: '#5C3D2E' }}>Nombre completo</label>
@@ -439,6 +456,7 @@ export default function Home() {
                 </p>
 
               </form>
+              )}
             </div>
           </FadeIn>
         </div>
