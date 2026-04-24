@@ -82,7 +82,7 @@ export default function Home() {
           </div>
 
           <div className="hidden md:flex items-center gap-3">
-            <Button variant="outline" className="border-primary/20 hover:bg-primary/5 font-serif italic text-primary">
+            <Button variant="outline" className="border-primary/20 hover:bg-primary/5 font-serif italic text-primary" onClick={() => document.getElementById('mapa')?.scrollIntoView({ behavior: 'smooth' })}>
               <MapPin className="w-4 h-4 mr-2" /> Cómo llegar
             </Button>
             <Button variant="outline" className="border-primary/20 hover:bg-primary/5 font-serif italic text-primary">
@@ -111,7 +111,7 @@ export default function Home() {
                 <span className="text-xs font-medium">4.5 (2,243)</span>
               </div>
             </div>
-            <Button variant="outline" className="w-full justify-start">
+            <Button variant="outline" className="w-full justify-start" onClick={() => { document.getElementById('mapa')?.scrollIntoView({ behavior: 'smooth' }); setIsMobileMenuOpen(false); }}>
               <MapPin className="w-4 h-4 mr-2" /> Cómo llegar
             </Button>
             <Button variant="outline" className="w-full justify-start">
@@ -373,7 +373,7 @@ export default function Home() {
       </section>
 
       {/* 8. MAP */}
-      <section className="py-24 bg-background">
+      <section id="mapa" className="py-24 bg-background">
         <div className="container mx-auto px-4">
           <FadeIn>
             <div className="text-center mb-12">
