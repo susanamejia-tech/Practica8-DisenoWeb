@@ -24,3 +24,63 @@ id = "okMSh26bqnweJdDRon1Yl"
 uri = "file://artifacts/pasteleria-esperanza/public/gallery3.png"
 type = "image"
 title = "cake slices"
+
+[[generated]]
+id = "WJOpAbdyOyaKoP2ARR5Ok"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-concha.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "YZ54aN2HvQ0NAliokPwRz"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-cuerno.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "kX_PrbBoJTGw6mJd5BvsL"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-tresleches.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "qCxSc3t2NGPn2HSDqdh2g"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-empanada.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "3EnIIGwvxzF3GXNVgUnD-"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-chocolate.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "Qioy4Za36BgJOHScPrj7k"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-eclair.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "YT8nFC9fDaMoSt9jAYyfg"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-fresas.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "aLQkyk3rPxnBQYIxb8pFJ"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-milhojas.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "6OG-mNCzzuxc8puytfNQs"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-cafeolla.png"
+type = "image"
+title = "generated_image"
+
+[[generated]]
+id = "LCitBCsW5AEdTrQKsQnwx"
+uri = "file://artifacts/pasteleria-esperanza/public/menu-macaron.png"
+type = "image"
+title = "generated_image"

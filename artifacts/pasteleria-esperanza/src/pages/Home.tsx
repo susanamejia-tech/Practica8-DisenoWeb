@@ -264,33 +264,33 @@ export default function Home() {
 
               <TabsContent value="pan" className="mt-0">
                 <div className="grid gap-6">
-                  <MenuCard title="Concha de Vainilla" desc="Suave pan esponjoso con cobertura de azúcar crujiente" price="$18" />
-                  <MenuCard title="Cuerno de Mantequilla" desc="Delicado y hojaldrado, perfecto para el desayuno" price="$22" />
-                  <MenuCard title="Empanada de Cajeta" desc="Rellena de cajeta artesanal, horneada a la perfección" price="$25" />
+                  <MenuCard title="Concha de Vainilla" desc="Suave pan esponjoso con cobertura de azúcar crujiente" price="$18" img="/menu-concha.png" />
+                  <MenuCard title="Cuerno de Mantequilla" desc="Delicado y hojaldrado, perfecto para el desayuno" price="$22" img="/menu-cuerno.png" />
+                  <MenuCard title="Empanada de Cajeta" desc="Rellena de cajeta artesanal, horneada a la perfección" price="$25" img="/menu-empanada.png" />
                 </div>
               </TabsContent>
               
               <TabsContent value="pasteles" className="mt-0">
                 <div className="grid gap-6">
-                  <MenuCard title="Pastel de Tres Leches" desc="Nuestro clásico irresistible, esponjoso y cremoso" price="$85 rebanada" />
-                  <MenuCard title="Pastel de Chocolate Belga" desc="Capas de bizcocho con ganache de cacao 70%" price="$95 rebanada" />
-                  <MenuCard title="Pastel de Fresas con Crema" desc="Fresas frescas de temporada con crema chantilly" price="$90 rebanada" />
+                  <MenuCard title="Pastel de Tres Leches" desc="Nuestro clásico irresistible, esponjoso y cremoso" price="$85 rebanada" img="/menu-tresleches.png" />
+                  <MenuCard title="Pastel de Chocolate Belga" desc="Capas de bizcocho con ganache de cacao 70%" price="$95 rebanada" img="/menu-chocolate.png" />
+                  <MenuCard title="Pastel de Fresas con Crema" desc="Fresas frescas de temporada con crema chantilly" price="$90 rebanada" img="/menu-fresas.png" />
                 </div>
               </TabsContent>
 
               <TabsContent value="reposteria" className="mt-0">
                 <div className="grid gap-6">
-                  <MenuCard title="Éclair de Café" desc="Pasta choux rellena de crema de café, glaseado brillante" price="$35" />
-                  <MenuCard title="Macaron de Frambuesa" desc="Delicado y crujiente, relleno de ganache de frambuesa" price="$28" />
-                  <MenuCard title="Mil Hojas de Vainilla" desc="Capas de hojaldre y crema pastelera" price="$40" />
+                  <MenuCard title="Éclair de Café" desc="Pasta choux rellena de crema de café, glaseado brillante" price="$35" img="/menu-eclair.png" />
+                  <MenuCard title="Macaron de Frambuesa" desc="Delicado y crujiente, relleno de ganache de frambuesa" price="$28" img="/menu-macaron.png" />
+                  <MenuCard title="Mil Hojas de Vainilla" desc="Capas de hojaldre y crema pastelera" price="$40" img="/menu-milhojas.png" />
                 </div>
               </TabsContent>
 
               <TabsContent value="bebidas" className="mt-0">
                 <div className="grid gap-6">
-                  <MenuCard title="Café de Olla" desc="Café artesanal con canela y piloncillo" price="$30" />
-                  <MenuCard title="Chocolate Caliente" desc="Espeso y aromático, receta tradicional mexicana" price="$35" />
-                  <MenuCard title="Agua de Jamaica" desc="Refrescante infusión de flor de Jamaica" price="$20" />
+                  <MenuCard title="Café de Olla" desc="Café artesanal con canela y piloncillo" price="$30" img="/menu-cafeolla.png" />
+                  <MenuCard title="Chocolate Caliente" desc="Espeso y aromático, receta tradicional mexicana" price="$35" imgFallbackColor="linear-gradient(135deg,#3d2214,#7a4a2e)" />
+                  <MenuCard title="Agua de Jamaica" desc="Refrescante infusión de flor de Jamaica" price="$20" imgFallbackColor="linear-gradient(135deg,#8b1a4a,#c94070)" />
                 </div>
               </TabsContent>
             </Tabs>
@@ -461,18 +461,27 @@ export default function Home() {
   );
 }
 
-function MenuCard({ title, desc, price }: { title: string, desc: string, price: string }) {
+function MenuCard({ title, desc, price, img, imgFallbackColor }: { title: string, desc: string, price: string, img?: string, imgFallbackColor?: string }) {
   return (
-    <div className="bg-background p-6 rounded-2xl border border-border shadow-sm hover:shadow-md transition-all flex flex-col sm:flex-row justify-between gap-4 items-start sm:items-center">
-      <div>
-        <h4 className="font-serif text-xl font-bold mb-2">{title}</h4>
-        <p className="text-muted-foreground text-sm">{desc}</p>
+    <div className="bg-background rounded-2xl border border-border shadow-sm hover:shadow-md transition-all flex flex-row gap-0 items-stretch overflow-hidden">
+      <div className="shrink-0 w-24 h-24 sm:w-28 sm:h-28 overflow-hidden">
+        {img ? (
+          <img src={img} alt={title} className="w-full h-full object-cover" />
+        ) : (
+          <div className="w-full h-full" style={{ background: imgFallbackColor || '#f5efe6' }} />
+        )}
       </div>
-      <div className="shrink-0 flex items-center gap-3">
-        <span className="font-bold text-lg text-primary">{price}</span>
-        <Button variant="ghost" size="icon" className="rounded-full shrink-0">
-          <ChevronRight className="w-5 h-5 text-muted-foreground" />
-        </Button>
+      <div className="flex flex-col sm:flex-row justify-between gap-2 items-start sm:items-center flex-1 px-5 py-4">
+        <div>
+          <h4 className="font-serif text-lg font-bold mb-1">{title}</h4>
+          <p className="text-muted-foreground text-sm">{desc}</p>
+        </div>
+        <div className="shrink-0 flex items-center gap-3">
+          <span className="font-bold text-lg text-primary">{price}</span>
+          <Button variant="ghost" size="icon" className="rounded-full shrink-0">
+            <ChevronRight className="w-5 h-5 text-muted-foreground" />
+          </Button>
+        </div>
       </div>
     </div>
   );
