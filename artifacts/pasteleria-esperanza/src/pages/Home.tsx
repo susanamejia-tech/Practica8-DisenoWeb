@@ -130,8 +130,8 @@ export default function Home() {
         >
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-background/90 z-10" />
           <img
-            src="/hero.png"
-            alt="Interior of Pastelerías Esperanza"
+            src="https://res.cloudinary.com/dml7j4luq/image/upload/v1776998854/pasteleria-esperanza_tf57xn.jpg"
+            alt="Fondo Pasteleria Esperanza"
             className="w-full h-full object-cover object-center"
           />
         </motion.div>
